@@ -118,6 +118,8 @@
     background-color: #bd8430;
 }
 
+
+
 @media (max-width: 992px) {
     .Room-slide {
         max-width: calc(50% - 1rem);

@@ -1,29 +1,129 @@
-.facilities-container {
+.function-hall {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.function-hall-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 7rem 1rem 2rem 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
 
-.facilities-title {
-    margin-bottom: 1rem;
+.function-hall-images {
+    flex: 1;
+    display: flex;
+    gap: 10px;
 }
 
-.facilities-title h1 {
-    font-size: 2.25rem;
-    color: #333;
-    margin-bottom: 1rem;
+.image-left {
+    width: 50%;
+    height: 100%;
+}
+
+.image-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-top-right,
+.image-bottom-right {
+    height: calc(50% - 5px);
+}
+
+.function-hall-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.function-hall-content {
+    flex: 1;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .description {
-    color: #666;
+    font-size: 16px;
     line-height: 1.6;
-    max-width: 90%;
-
+    color: #666;
+    margin-bottom: 25px;
 }
 
-.facilities-Cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
+.function-hall-content h1 {
+    font-size: 36px;
+    color: #333;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+}
+
+.view-all-button {
+    background-color: #d4a017;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+view-all-button:hover {
+    background-color: #b58a14;
+}
+
+@media (max-width: 992px) {
+    .function-hall-container {
+        flex-direction: column;
+    }
+
+    .function-hall-images {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .function-hall-images {
+        height: 400px;
+    }
+
+    .function-hall-content h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .function-hall-images {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-left,
+    .image-right {
+        width: 100%;
+    }
+
+    .image-left {
+        height: 250px;
+    }
+
+    .image-right {
+        height: 250px;
+        flex-direction: row;
+    }
+
+    .image-top-right,
+    .image-bottom-right {
+        width: 50%;
+        height: 100%;
+    }
 }

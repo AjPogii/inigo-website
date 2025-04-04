@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     background-color: transparent;
-    backdrop-filter: blur(12px);
+
     align-items: center;
     padding: 0 15%;
     position: fixed;
@@ -60,7 +60,7 @@
     position: relative;
 }
 
-.navbar-container ul li:hover {
+.navbar-container ul li a:hover {
     color: #94511d;
 }
 
@@ -121,6 +121,11 @@
 }
 
 @media screen and (max-width: 1200px) {
+
+    .navbar-container {
+        padding: 0 5%;
+    }
+
     #bar-icon {
         display: flex;
     }
@@ -149,9 +154,6 @@
         left: 0;
     }
 
-    .nav-container .active-menu {
-        left: 0;
-    }
 
     .navbar-container ul li {
         display: block;
