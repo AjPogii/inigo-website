@@ -1,0 +1,107 @@
+.room-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.room-container {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 100px;
+}
+
+.room-container h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.room-container p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.room-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-content {
+  padding: 1.5rem;
+}
+
+.room-name {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.room-description {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.room-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.room-price {
+  font-weight: bold;
+  color: #94511d;
+}
+
+.view-details-button, .book-now-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.book-now-button {
+  background-color: #94511d;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.view-details-button:hover {
+  background-color: #e0e0e0;
+}
+
+.book-now-button:hover {
+  background-color: #7a4218;
+}
+
+@media (max-width: 768px) {
+  .room-list {
+    grid-template-columns: 1fr;
+  }
+}
