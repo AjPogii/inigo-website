@@ -1,10 +1,86 @@
-.footer-container .footer-links .footer-logo {
-    width: 24%;
-    height: auto;
-    margin-left: 5px;
+.footer-container {
+    color: black;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .logo-img {
-    width: 50%;
+    max-width: 200px;
     height: auto;
+}
+
+.footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-column,
+.address-column {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.column-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.underline {
+    height: 1px;
+    background-color: black;
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.icon-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.icon-circle i {
+    font-size: 16px;
+}
+
+.contact-text p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.adadress-text {
+    text-align: right;
 }
