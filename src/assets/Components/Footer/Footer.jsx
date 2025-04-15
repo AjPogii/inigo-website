@@ -71,7 +71,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                <p>&copy; {currentYear} Luxury Hotel. All rights reserved.</p>
+                <p>&copy; {currentYear} Hotel Inigo. All rights reserved.</p>
             </div>
         </footer>
 

@@ -21,9 +21,9 @@ import functionhall1 from '../../../assets/images/functionhall1.jpg'
 import functionhall2 from '../../../assets/images/functionhall2.jpg'
 import functionhall3 from '../../../assets/images/functionhall3.jpg'
 
-import cafe1 from '../../../assets/images/cafe1.jpg'
-import cafe2 from '../../../assets/images/cafe2.jpg'
-import cafe3 from '../../../assets/images/cafe3.jpg'
+import cafe1 from '../../../assets/images/cafe-1.jpg'
+import cafe2 from '../../../assets/images/cafe-2.jpg'
+import cafe3 from '../../../assets/images/cafe-3.jpg'
 
 
 const Facilities = () => {
@@ -61,7 +61,7 @@ const Facilities = () => {
             name: "Cafe",
             description: "Indulge in a delightful dining experience at our cozy café, where you can enjoy a variety of international and local flavors in a warm and inviting atmosphere. Our café is designed to provide a comfortable space for guests to relax and socialize while savoring a selection of teas, coffees, and delicious pastries.",
             type: "slider",
-            images: [cafe1, cafe2, cafe3],
+            slides: [cafe1, cafe2, cafe3],
             position: "center"
         },
 
@@ -117,27 +117,27 @@ const Facilities = () => {
     const SliderCard = (facility) => {
         return (
             <div className="facility-card  cafe-card" key={facility.id}>
-                <div className="card-header">
-                    <h2>{facility.name}</h2>
-                </div>
+                <div className="slider-container">
+                    <div className="static-content">
+                        <div className="card-header">
+                            <h2>{facility.name}</h2>
+                        </div>
+                        <div className="card-description">
+                            <p>{facility.description}</p>
+                        </div>
+                    </div>
 
-                <div className="card-content slider-content">
                     <Swiper
-                        modules={[Navigation, Pagination, Autoplay]}
+                        modules={[Autoplay]}
                         spaceBetween={0}
                         slidesPerView={1}
                         autoplay={{ delay: 3000 }}
-                        navigation
-                        pagination={{ clickable: true }}
                         className="cafe-slider"
                     >
                         {facility.slides && facility.slides.map((slide, index) => (
                             <SwiperSlide key={index}>
                                 <div className="slider-image-container">
                                     <img src={slide} alt={`${facility.name} Slide ${index + 1}`} />
-                                    <div className="slider-description">
-                                        <p>{slide.description}</p>
-                                    </div>
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -157,6 +157,8 @@ const Facilities = () => {
                     or a combination of both. From relaxing spaces to productive areas,
                     we ensure that you have everything you need to make your stay with us truly unforgettable.</p>
             </div>
+
+
 
             {facilities.map((facility) =>
                 facility.type === 'collage'
