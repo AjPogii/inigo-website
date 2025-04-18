@@ -37,41 +37,44 @@ const RoomSection = () => {
     return (
 
         <div className="Room-Section section">
-            <div className="Rooms-title">
-                <h1 className="section-title">Rooms & Suites</h1>
-                <p className="description">
-                    Experience ultimate comfort in our elegantly appointed rooms and suites, designed for relaxation and rejuvenation.
-                </p>
-            </div>
+            <div className="Room-container">
+                <div className="Rooms-title">
+                    <h1 className="section-title">Rooms & Suites</h1>
+                    <p className="description">
+                        Experience ultimate comfort in our elegantly appointed rooms and suites, designed for relaxation and rejuvenation.
+                    </p>
+                </div>
 
-            <div className="Room-Cards">
-                {rooms.map((room) => (
-                    <div key={room.id} className="Room-slide">
-                        <div className="Room-Card">
-                            <div className="Room-Img">
-                                <img src={room.image} alt="room-image" />
+                <div className="Room-Cards">
+                    {rooms.map((room) => (
+                        <div key={room.id} className="Room-slide">
+                            <div className="Room-Card">
+                                <div className="Room-Img">
+                                    <img src={room.image} alt="room-image" />
 
-                            </div>
+                                </div>
 
-                            <div className="Room-Content">
-                                <h3>{room.title}</h3>
-                                <div className="Price-Container">
-                                    <span className="Price-Amount">{room.price}</span>
-                                    <span className="Price-Period">{room.perNight}</span>
+                                <div className="Room-Content">
+                                    <h3>{room.title}</h3>
+                                    <div className="Price-Container">
+                                        <span className="Price-Amount">{room.price}</span>
+                                        <span className="Price-Period">{room.perNight}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            <div className="View-All-Container">
-                <button className="View-All-Button">
-                    VIEW ALL
-                </button>
+                <div className="View-All-Container">
+                    <button className="View-All-Button">
+                        VIEW ALL
+                    </button>
 
+                </div>
             </div>
         </div>
+
     )
 }
 

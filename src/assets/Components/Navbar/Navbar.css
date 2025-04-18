@@ -1,14 +1,28 @@
 .navbar-container {
     height: 80px;
     width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    background-color: transparent;
+    background: transparent;
     align-items: center;
-    padding: 0 8%;
+    padding: 0 2rem;
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 99;
+    transition: transform 0.4s ease, background-color 0.3s ease;
+}
+
+.navbar {
+    width: 100%;
+    justify-content: center;
+    position: static;
+    background-color: rgba(89, 79, 79, 0.6);
+
+
 }
 
 .navbar-container::after {
@@ -21,20 +35,27 @@
     z-index: -1;
 }
 
+.navbar-visible {
+    transform: translateY(0);
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
 .navbarScroll {
-    background-color: rgba(131, 131, 131, 0.6);
-    backdrop-filter: blur(12px);
+    background-color: rgba(89, 79, 79, 0.6);
+    backdrop-filter: blur(8px);
 }
 
 .navbar-container .active {
     color: #94511d;
-
 }
 
 .navbar-container .logo {
     width: 24%;
     height: auto;
-    margin-left: 5px;
+    margin-left: 48px;
 }
 
 .logo-img {
@@ -47,7 +68,8 @@
 }
 
 .navbar-container ul {
-    display: inline-block;
+    display: flex;
+    list-style: none;
     margin: 0 18px;
     position: relative;
 }
@@ -58,8 +80,35 @@
     position: relative;
 }
 
+.navbar-container ul li a {
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: 'poppins';
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
 .navbar-container ul li a:hover {
     color: #94511d;
+}
+
+/* Add underline effect on hover */
+.navbar-container ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #94511d;
+    transition: width 0.3s ease;
+}
+
+.navbar-container ul li a:hover::after {
+    width: 100%;
 }
 
 .navbar-container ul li::after {
@@ -71,21 +120,7 @@
     border-radius: 50%;
     transition: .2s;
     transform: translateX(-50%);
-    background-color: #fff;
-}
-
-.navbar-container ul li a {
-    margin: 0 15px;
-    font-weight: 500;
-    font-size: 15px;
-    font-family: 'poppins';
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.navbar-container ul li a :hover {
-    color: #94511d;
+    background-color: #bc6d6d;
 }
 
 .nav-btns {
@@ -93,6 +128,25 @@
     justify-content: space-between;
     align-items: center;
     gap: 18px;
+    position: relative;
+    margin-right: 60px;
+}
+
+.nav-button {
+    padding: 8px 20px;
+    background-color: #94511d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #7a4318;
+    transform: translateY(-2px);
 }
 
 #bar-icon {
@@ -100,68 +154,75 @@
     background-color: #94511d;
     height: 40px;
     width: 40px;
-    display: flex;
+    position: fixed;
     align-items: center;
     justify-content: center;
     font-size: 15px;
     color: #fff;
     box-shadow: 2px 2px 3px #ffffff94, inset 3px 3px 10px #ffffff94;
     cursor: pointer;
+
     transition: 1s;
     display: none;
-
 }
 
-.bar-icon:hover {
+#bar-icon:hover {
     box-shadow: 0px 0px 0px #ffffff94, inset 3px 3px 10px #ffffff94;
     transform: scale(0.9);
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 768px) {
 
-    .navbar-container {
-        padding: 0 5%;
-    }
-
+    /* Show hamburger icon on small devices */
     #bar-icon {
         display: flex;
+        /* Show on mobile */
+        position: static;
+        /* Remove fixed positioning */
+        margin-left: 10px;
+        /* Add spacing from book button */
     }
 
-    .logo {
-        margin-bottom: 10px;
-    }
-
+    /* Hide the navigation menu by default */
     .navbar-container ul {
         position: absolute;
         top: 100%;
         left: -100%;
+        /* Hide offscreen to the left */
+
         width: 100%;
-        background-color: rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(8px);
+        flex-direction: column;
+        padding-top: 80px;
+        border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
-        transition: .6s;
+        /* to avoid navbar height */
+        margin: 0;
+        transition: left 0.3s ease;
+
     }
 
-    .navbar-container ul li::after {
-        left: 10%;
-        top: 35px;
-    }
-
-    .navbar-container .active {
-        left: 0;
-    }
-
-
+    /* Navigation links styling for vertical menu */
     .navbar-container ul li {
-        display: block;
+
         margin: 5px 0;
         padding: 25px 0;
-        padding-left: 15%;
-        border-bottom: rgba(131, 131, 131, 0.4);
+        text-align: left;
+        padding-left: 8%;
+        display: block;
+
     }
 
-    .navbar-container ul li:last-child {
-        border: none;
+    /* When menu is active/open, slide it in */
+    .navbar-container ul.active {
+        left: 0;
     }
+}
 
+@media (min-width: 769px) {
+    #bar-icon {
+        display: none;
+        /* Hide on desktop */
+    }
 }

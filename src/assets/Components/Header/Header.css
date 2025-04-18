@@ -1,17 +1,27 @@
-.header-container {
-
+.header {
     width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.header-container {
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 100%;
     position: relative;
     justify-content: end;
+    z-index: 1;
+
 }
 
 .header-slider {
-    min-height: 100vh;
+    height: auto;
+    min-height: 500px;
+    width: 100%;
+    position: relative;
 }
 
 .Swiper-container {
-    height: 100vh !important;
+    height: 2000px !important;
+    max-height: 100vh !important;
     width: 100% !important;
 }
 
@@ -93,8 +103,6 @@
     transition: 1s;
     display: none;
 }
-
-
 
 
 @media screen and (max-width: 768px) {

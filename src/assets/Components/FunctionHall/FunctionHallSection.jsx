@@ -16,19 +16,16 @@ const FunctionHall = () => {
                 <div className="function-hall-content">
 
                     <h1 className="section-heading">Function Hall</h1>
-                    <p className="description">
+                    <small className="description">
                         Hotel Inigo is an ideal venue for meetings, conferences, and special events,
                         offering a blend of elegance and functionality. With thoughtfully designed event spaces,
                         the hotel provides a refined setting suited for business gatherings,
-                        social celebrations, and corporate functions. Equipped with modern amenities and supported by a dedicated team,
-                        Hotel Inigo ensures a memorable experience, making every event both productive and enjoyable. Whether hosting an intimate meeting or
-                        a grand affair, guests can expect top-notch service and a welcoming atmosphere.
-                    </p>
+                        social celebrations, and corporate functions.
+                    </small>
 
                     <button className="view-all-button"> View all</button>
 
                 </div>
-
 
                 <div className="function-hall-images">
                     <div className="image-left">
