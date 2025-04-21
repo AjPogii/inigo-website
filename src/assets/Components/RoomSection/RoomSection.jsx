@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './RoomSection.css'
 import RoomImg1 from '../../images/room-img1.png'
 import RoomImg2 from '../../images/room-img2.png'
@@ -67,9 +68,9 @@ const RoomSection = () => {
                 </div>
 
                 <div className="View-All-Container">
-                    <button className="View-All-Button">
+                    <Link to="/room" className="View-All-Button">
                         VIEW ALL
-                    </button>
+                    </Link>
 
                 </div>
             </div>

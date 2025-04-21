@@ -1,27 +1,21 @@
 .navbar-container {
-    height: 80px;
+    min-height: 80px;
     width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    background: transparent;
+
     align-items: center;
     padding: 0 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     z-index: 99;
     transition: transform 0.4s ease, background-color 0.3s ease;
 }
 
 .navbar {
     width: 100%;
-    justify-content: center;
-    position: static;
-    background-color: rgba(89, 79, 79, 0.6);
-
+    top: 0;
+    left: 0;
+    z-index: 99;
+    position: fixed;
 
 }
 
@@ -60,6 +54,7 @@
 
 .logo-img {
     width: 60%;
+    max-width: 100%;
     height: auto;
 }
 

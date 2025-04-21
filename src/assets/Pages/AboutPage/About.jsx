@@ -10,9 +10,14 @@ const About = () => {
     return (
 
         <div className="about-page">
-            <div className="about-container">
-                <h2>About Us</h2>
-                <div className="underline"></div>
+            <div className="hero-section">
+                <div className="hero-overlay">
+                    <div className="about-container-content">
+                        <h2>About Us</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    </div>
+
+                </div>
             </div>
 
             <div className="about-content">

@@ -150,21 +150,26 @@ const Facilities = () => {
 
     return (
         <div className="facilities-page">
-            <div className="facilities-container section">
-                <h2>Our Facilities</h2>
-                <p>At our hotel, we strive to provide a comprehensive and comfortable experience for all our guests.
-                    Our facilities are designed to cater to your every need, whether you're here for business, leisure,
-                    or a combination of both. From relaxing spaces to productive areas,
-                    we ensure that you have everything you need to make your stay with us truly unforgettable.</p>
+            <div className="facilities-hero">
+                <div className="hero-overlay">
+                    <div className="facilities-container section">
+                        <h2>Our Facilities</h2>
+                        <p>At our hotel, we strive to provide a comprehensive and comfortable experience for all our guests.
+                            Our facilities are designed to cater to your every need, whether you're here for business, leisure,
+                            or a combination of both. From relaxing spaces to productive areas,
+                            we ensure that you have everything you need to make your stay with us truly unforgettable.</p>
+                    </div>
+                </div>
             </div>
 
+            <div className="facilities-content">
+                {facilities.map((facility) =>
+                    facility.type === 'collage'
+                        ? FacilityCard(facility)
+                        : SliderCard(facility)
+                )}
+            </div>
 
-
-            {facilities.map((facility) =>
-                facility.type === 'collage'
-                    ? FacilityCard(facility)
-                    : SliderCard(facility)
-            )}
         </div >
     )
 

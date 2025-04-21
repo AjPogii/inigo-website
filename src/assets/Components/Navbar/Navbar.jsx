@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 import logo from '../../../assets/images/logo.png' // Assuming you have a logo image in the specified path
 
@@ -53,11 +54,11 @@ const Navbar = () => {
                 </div>
 
                 <ul ref={menu}>
-                    <li><a href="home">Home</a></li>
-                    <li><a href="room">Rooms</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="facilities">Facilities</a></li>
-                    <li><a href="contact">Contact</a></li>
+                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/room">Rooms</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="facilities">Facilities</Link></li>
+                    <li><Link to="contact">Contact</Link></li>
                 </ul>
 
                 <div className="nav-btns">

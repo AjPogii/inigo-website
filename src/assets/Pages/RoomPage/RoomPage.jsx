@@ -1,8 +1,12 @@
 import React from "react";
 import "./RoomPage.css";
+import { Link } from "react-router-dom";
+
+
+import heroImg from "../../images/singleroom1.jpg";
+// Import other images if you have them
 
 import RoomImg1 from "../../images/room-img1.png";
-// Import other images if you have them
 // import RoomImg2 from "../../images/room-img2.png";
 // import RoomImg3 from "../../images/room-img3.png";
 
@@ -57,39 +61,47 @@ const RoomData = [
   },
 ];
 
+
 const RoomPage = () => {
   return (
     <div className="room-page">
-      <div className="room-container">
-        <h1>ROOMS AND SUITES</h1>
-        <p>Experience our luxurious accommodations</p>
+      <div className="hero-section">
+        <img src={heroImg} alt="img" className="hero-img" />
+        <div className="room-container-content">
+          <h1>ROOMS AND SUITES</h1>
+          <p>Experience our luxurious accommodations</p>
+        </div>
       </div>
 
-      <div className="room-list">
-        {RoomData.map((room) => (
-          <div className="room-card" key={room.id}>
-            {room.image && (
-              <img
-                src={room.image}
-                alt={room.name}
-                className="room-image"
-                onError={(e) => {
-                  e.target.style.display = "none"; // Hide if image fails to load
-                }}
-              />
-            )}
+      <div className="room-list-container">
+        <div className="room-list">
+          {RoomData.map((room) => (
+            <div className="room-card" key={room.id}>
+              {room.image && (
+                <img
+                  src={room.image}
+                  alt={room.name}
+                  className="room-image"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                  }}
+                />
+              )}
 
-            <div className="room-content">
-              <h3 className="room-name">{room.name}</h3>
-              <p className="room-description">{room.description}</p>
-              <div className="room-footer">
-                <span className="room-price">{room.price}/ night</span>
-                <button className="view-details-button">View Details</button>
-                <button className="book-now-button">Book Now</button>
+              <div className="room-content">
+                <h3 className="room-name">{room.name}</h3>
+                <p className="room-description">{room.description}</p>
+                <div className="room-footer">
+                  <span className="room-price">{room.price}/ night</span>
+                  <Link to={`/room/${room.id}`} className="view-details-button">
+                    View Details
+                  </Link>
+                  <button className="book-now-button">Book Now</button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

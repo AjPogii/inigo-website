@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './FunctionHallSection.css'
 
 import HallImg1 from '../../images/room-img1.png'
@@ -23,7 +24,7 @@ const FunctionHall = () => {
                         social celebrations, and corporate functions.
                     </small>
 
-                    <button className="view-all-button"> View all</button>
+                    <Link to="/facilities" className="view-all-button"> View all</Link>
 
                 </div>
 
