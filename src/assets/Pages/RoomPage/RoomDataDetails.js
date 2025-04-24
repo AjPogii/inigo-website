@@ -1,24 +1,21 @@
 
-
-
 import RoomImg1 from "../../images/room-img1.png";
 // import RoomImg2 from "../../images/room-img2.png";
 // import RoomImg3 from "../../images/room-img3.png";
 
-const RoomData = [
+const RoomDetails = [
     {
         id: 1,
-        title: "Superior Double Room",
-        shortDescription: "Elegant comfort with modern amenities",
+        title: "Standard Room",
         description: "Aenean vehicula ligula eu rhoncus porttitor. Duis vel lacinia quam. Nunc rutrum porta place ulam ipsum. Morbi imperdiet, orci et dapibus. Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volupa mollis sapien velet consejyer turpeutionyer masin libero sempe mollis.",
         price: 300,
+        currency: "₱",
         view: "City View",
         size: "24m²",
         capacity: 2,
         bedType: "One bed",
-        mainImage: "/api/placeholder/1200/300",
         images: [
-            "/api/placeholder/600/350",
+            RoomImg1,
             "/api/placeholder/400/180",
             "/api/placeholder/400/180"
         ],
@@ -28,7 +25,10 @@ const RoomData = [
             "Air Condition",
             "Heater",
             "Phone",
-            "Laundry"
+            "Laundry",
+            "chairs",
+            "tables",
+            "sofa"
         ],
         features: [
             "Room Service",
@@ -37,19 +37,26 @@ const RoomData = [
             "Safe Deposit Box",
             "Hair Dryer",
             "Wake-up Service"
+        ],
+        privateRoom: [
+            "Private Bathroom",
+            "Shower",
+            "Toiletries",
+            "Towels",
+            "Hair Dryer",
+            "Bathrobe"
         ]
     },
     {
         id: 2,
-        title: "Deluxe Ocean Suite",
-        shortDescription: "Experience luxury with breathtaking ocean views",
+        title: "Deluxe Room",
         description: "Aenean vehicula ligula eu rhoncus porttitor. Duis vel lacinia quam. Nunc rutrum porta place ulam ipsum. Morbi imperdiet, orci et dapibus. Interdum et malesu they adamale fames ac anteipsu pimsine faucibus curabitur arcu site feugiat in tortor in, volutpat sollicitudin libero. Hotel non lorem acer suscipit bibendum vulla facilisi nedeuter nunc volupa mollis sapien velet consejyer turpeutionyer masin libero sempe mollis.",
         price: 450,
+        currency: "₱",
         view: "Ocean View",
-        size: "38m²",
         capacity: 3,
         bedType: "King-size bed",
-        mainImage: "/api/placeholder/1200/300",
+
         images: [
             "/api/placeholder/600/350",
             "/api/placeholder/400/180",
@@ -70,22 +77,23 @@ const RoomData = [
             "Nespresso Machine",
             "Smart Home Controls",
             "Luxury Bedding"
+        ],
+        privateRoom: [
+            "Private Bathroom",
+            "Shower",
+            "Toiletries",
+            "Towels",
+            "Hair Dryer",
+            "Bathrobe"
         ]
     },
     {
-        id: 3,
 
     },
     {
-        id: 4,
 
-    },
-    {
-        id: 5,
-    },
-    {
-        id: 6,
     },
 ];
 
-export default RoomData;
+export default RoomDetails;
+

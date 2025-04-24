@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./RoomPage.css";
-import { Link } from "react-router-dom";
-
+import RoomDetailsPage from "./RoomDetailsPage";
 
 import heroImg from "../../images/singleroom1.jpg";
 // Import other images if you have them
-
 import RoomImg1 from "../../images/room-img1.png";
 // import RoomImg2 from "../../images/room-img2.png";
 // import RoomImg3 from "../../images/room-img3.png";
@@ -13,7 +11,7 @@ import RoomImg1 from "../../images/room-img1.png";
 const RoomData = [
   {
     id: 1,
-    name: "Standard Room",
+    title: "Standard Room",
     price: "₱2000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
@@ -21,7 +19,7 @@ const RoomData = [
   },
   {
     id: 2,
-    name: "Deluxe Room",
+    title: "Deluxe Room",
     price: "₱3000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
@@ -29,7 +27,7 @@ const RoomData = [
   },
   {
     id: 3,
-    name: "Twin deluxe Room",
+    title: "Twin deluxe Room",
     price: "₱4000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
@@ -37,7 +35,7 @@ const RoomData = [
   },
   {
     id: 4,
-    name: "Executive Room",
+    title: "Executive Room",
     price: "₱5000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
@@ -45,7 +43,7 @@ const RoomData = [
   },
   {
     id: 5,
-    name: "Special Executive Room",
+    title: "Special Executive Room",
     price: "₱6000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
@@ -53,16 +51,33 @@ const RoomData = [
   },
   {
     id: 6,
-    name: "Family Room",
+    title: "Family Room",
     price: "₱7000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
     image: RoomImg1, // Use placeholder or import actual image
   },
+
 ];
 
+const normalize = (str) => str.toLowerCase().replace(/\s+/g, "-");
 
 const RoomPage = () => {
+
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [selectedRoom, setSelectedRoom] = React.useState(null);
+
+  const openRoomDetails = (room) => {
+    setSelectedRoom(room.title);
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden"; // Disable scrolling
+  }
+
+  const closeRoomDetails = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = "auto"; // Enable scrolling
+  }
+
   return (
     <div className="room-page">
       <div className="hero-section">
@@ -80,7 +95,7 @@ const RoomPage = () => {
               {room.image && (
                 <img
                   src={room.image}
-                  alt={room.name}
+                  alt={room.title}
                   className="room-image"
                   onError={(e) => {
                     e.target.style.display = "none";
@@ -89,13 +104,14 @@ const RoomPage = () => {
               )}
 
               <div className="room-content">
-                <h3 className="room-name">{room.name}</h3>
+                <h3 className="room-name">{room.title}</h3>
                 <p className="room-description">{room.description}</p>
                 <div className="room-footer">
                   <span className="room-price">{room.price}/ night</span>
-                  <Link to={`/room/${room.id}`} className="view-details-button">
+                  <button className="view-details-button"
+                    onClick={() => openRoomDetails(room)}>
                     View Details
-                  </Link>
+                  </button>
                   <button className="book-now-button">Book Now</button>
                 </div>
               </div>
@@ -103,6 +119,10 @@ const RoomPage = () => {
           ))}
         </div>
       </div>
+      <RoomDetailsPage
+        isOpen={isModalOpen}
+        onClose={closeRoomDetails}
+        roomname={selectedRoom} />
     </div>
   );
 };
