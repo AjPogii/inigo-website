@@ -8,16 +8,19 @@ import RoomSection from "../../Components/RoomSection/RoomSection";
 import AboutSection from "../../Components/AboutSection/AboutSection";
 import FunctionHallSection from "../../Components/FunctionHall/FunctionHallSection";
 import Footer from "../../Components/Footer/Footer";
+import GallerySection from "../../Components/Gallery/GallerySection";
 
 const Homepage = () => {
   return (
-    <div>
+    <main className="homepage">
       <Header />
       <RoomSection />
       <AboutSection />
       <FunctionHallSection />
+      <GallerySection />
       <Footer />
-    </div>
+    </main>
+
   );
 };
 

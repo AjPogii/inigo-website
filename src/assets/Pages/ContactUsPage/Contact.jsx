@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Contact.css';
+import heroimg from '../../../assets/images/functionhall3.jpg';
 
 const Contact = () => {
 
@@ -22,13 +23,20 @@ const Contact = () => {
     return (
 
         <div className="contact-page">
-            <div className="contact-container">
-                <h1>Contact Us</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed sit amet nulla auctor, vestibulum magna sed, convallis ex</p>
+            <div className="hero-image">
+                <img src={heroimg} alt="" />
+                <div className="contact-container">
+                    <h1>Contact Us</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Sed sit amet nulla auctor, vestibulum magna sed, convallis ex</p>
+                </div>
             </div>
 
             <div className="container-content">
+
+                <div className="map-location">
+
+                </div>
 
                 <div className="contact-info">
                     <div className="box">

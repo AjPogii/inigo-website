@@ -1,17 +1,15 @@
 .About-container {
     flex-direction: row;
-
 }
 
 .about-inner-container {
     max-width: 1200px;
-    /* or your preferred max width */
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 4rem 1rem;
-    /* adjust padding as needed */
+
+
     gap: 2rem;
     box-sizing: border-box;
 }

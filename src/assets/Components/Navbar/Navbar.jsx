@@ -57,8 +57,8 @@ const Navbar = () => {
                     <li><Link to="/home">Home</Link></li>
                     <li><Link to="/room">Rooms</Link></li>
                     <li><Link to="/about">About</Link></li>
-                    <li><Link to="facilities">Facilities</Link></li>
-                    <li><Link to="contact">Contact</Link></li>
+                    <li><Link to="/facilities">Facilities</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                 </ul>
 
                 <div className="nav-btns">

@@ -33,7 +33,7 @@ const RoomDetailsPage = ({ isOpen, onClose, roomname }) => {
         }}>
 
             <div className="modal-content">
-                <button className="close-modal-button" onClick={onclose}>×</button>
+
 
 
                 <div className='room-details-page'>
