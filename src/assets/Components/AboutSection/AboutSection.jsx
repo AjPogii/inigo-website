@@ -1,6 +1,8 @@
 import React from 'react'
 import './AboutSection.css'
 import aboutImg from '../../images/hero1.jpg'
+import aboutImg2 from '../../images/hero2.jpg'
+
 
 const AboutSection = () => {
     return (
@@ -9,7 +11,13 @@ const AboutSection = () => {
             <div className="about-inner-container">
 
                 <div className="About-img">
-                    <img src={aboutImg} alt="about-img" />
+                    <div className="top-left-img">
+                        <img src={aboutImg} alt="about-img" />
+                    </div>
+                    <div className="bottom-right-img">
+                        <img src={aboutImg2} alt="about-img" />
+                    </div>
+
                 </div>
 
                 <div className="About-content">

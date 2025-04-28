@@ -9,13 +9,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-import singleroom1 from '../../../assets/images/singleroom1.jpg'
-import singleroom2 from '../../../assets/images/singleroom2.jpg'
-import singleroom3 from '../../../assets/images/singleroom3.jpg'
+import singleroom1 from '../../../assets/images/standard-1.jpg'
+import singleroom2 from '../../../assets/images/standard-2.jpg'
+import singleroom3 from '../../../assets/images/standard-3.jpg'
 
-import doublerooom1 from '../../../assets/images/doubleroom1.jpg'
-import doublerooom2 from '../../../assets/images/doubleroom2.jpg'
-import doublerooom3 from '../../../assets/images/doubleroom3.jpg'
+import doublerooom1 from '../../../assets/images/double-1.jpg'
+import doublerooom2 from '../../../assets/images/double-2.jpg'
+import doublerooom3 from '../../../assets/images/double-3.jpg'
 
 import functionhall1 from '../../../assets/images/functionhall1.jpg'
 import functionhall2 from '../../../assets/images/functionhall2.jpg'

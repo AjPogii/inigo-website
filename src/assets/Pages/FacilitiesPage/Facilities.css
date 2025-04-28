@@ -7,7 +7,9 @@
 .facilities-hero {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 500px;
+    background-image: url(../../images/facilities-hero.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -21,7 +23,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +47,7 @@
     font-size: 1.1rem;
     line-height: 1.8;
     max-width: 800px;
+    color: white;
     margin: 0 auto;
 }
 

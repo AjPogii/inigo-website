@@ -43,7 +43,7 @@ const RoomDetailsPage = ({ isOpen, onClose, roomname }) => {
                                 modules={Autoplay}
                                 spaceBetween={0}
                                 slidesPerView={1}
-                                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                                autoplay={{ delay: 5000, disableOnInteraction: false }}
                                 loop={true}
                                 className="room-swiper"
                             >

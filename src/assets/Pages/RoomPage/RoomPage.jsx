@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./RoomPage.css";
 import RoomDetailsPage from "./RoomDetailsPage";
 
-import heroImg from "../../images/singleroom1.jpg";
+import heroImg from "../../images/room-hero.jpg";
 // Import other images if you have them
 import RoomImg1 from "../../images/room-img1.png";
+import standardimg from "../../images/standard-3.jpg"
 // import RoomImg2 from "../../images/room-img2.png";
 // import RoomImg3 from "../../images/room-img3.png";
 
@@ -15,7 +16,7 @@ const RoomData = [
     price: "₱2000",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.",
-    image: RoomImg1, // Removed the curly braces
+    image: standardimg, // Removed the curly braces
   },
   {
     id: 2,
@@ -59,8 +60,6 @@ const RoomData = [
   },
 
 ];
-
-const normalize = (str) => str.toLowerCase().replace(/\s+/g, "-");
 
 const RoomPage = () => {
 
