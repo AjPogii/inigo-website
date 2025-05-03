@@ -9,22 +9,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-import singleroom1 from '../../../assets/images/standard-1.jpg'
-import singleroom2 from '../../../assets/images/standard-2.jpg'
-import singleroom3 from '../../../assets/images/standard-3.jpg'
-
-import doublerooom1 from '../../../assets/images/double-1.jpg'
-import doublerooom2 from '../../../assets/images/double-2.jpg'
-import doublerooom3 from '../../../assets/images/double-3.jpg'
-
-import functionhall1 from '../../../assets/images/functionhall1.jpg'
-import functionhall2 from '../../../assets/images/functionhall2.jpg'
-import functionhall3 from '../../../assets/images/functionhall3.jpg'
-
-import cafe1 from '../../../assets/images/cafe-1.jpg'
-import cafe2 from '../../../assets/images/cafe-2.jpg'
-import cafe3 from '../../../assets/images/cafe-3.jpg'
-
 
 const Facilities = () => {
 
@@ -35,7 +19,7 @@ const Facilities = () => {
             name: "Single Room",
             description: "Indulge in comfort and tranquility in our cozy Single Room, designed to provide the perfect retreat for solo travelers. This inviting space features a plush single bed, ensuring a restful night's sleep. The room is equipped with modern amenities, including a flat-screen TV, complimentary Wi-Fi, and a stylishly appointed bathroom with a refreshing shower.",
             type: "collage",
-            images: [singleroom1, singleroom2, singleroom3],
+            images: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
             position: "left"
         },
 
@@ -44,7 +28,7 @@ const Facilities = () => {
             name: "Double Room",
             description: "Experience comfort and elegance in our Double Room, designed to accommodate two guests with style and sophistication. This spacious room features a luxurious queen or king-size bed, perfect for couples or friends traveling together. The room is equipped with modern amenities, including a flat-screen TV, complimentary Wi-Fi, and an en-suite bathroom with a refreshing shower or bath.",
             type: "collage",
-            images: [doublerooom1, doublerooom2, doublerooom3],
+            images: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
             position: "right"
         },
         {
@@ -52,7 +36,7 @@ const Facilities = () => {
             name: "Function Hall",
             description: "Whether you're planning a grand celebration, a corporate event, or an intimate gathering, these function halls offer a range of features and capacities to suit your needs. From luxurious ballrooms to versatile meeting spaces, here are some outstanding options for hosting your next event.",
             type: "collage",
-            images: [functionhall1, functionhall2, functionhall3],
+            images: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
             position: "left"
         },
 
@@ -61,7 +45,7 @@ const Facilities = () => {
             name: "Cafe",
             description: "Indulge in a delightful dining experience at our cozy café, where you can enjoy a variety of international and local flavors in a warm and inviting atmosphere. Our café is designed to provide a comfortable space for guests to relax and socialize while savoring a selection of teas, coffees, and delicious pastries.",
             type: "slider",
-            slides: [cafe1, cafe2, cafe3],
+            slides: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
             position: "center"
         },
 
@@ -118,14 +102,17 @@ const Facilities = () => {
         return (
             <div className="facility-card  cafe-card" key={facility.id}>
                 <div className="slider-container">
-                    <div className="static-content">
-                        <div className="card-header">
-                            <h2>{facility.name}</h2>
-                        </div>
-                        <div className="card-description">
-                            <p>{facility.description}</p>
+                    <div className="card-content-container">
+                        <div className="static-content">
+                            <div className="card-header">
+                                <h2>{facility.name}</h2>
+                            </div>
+                            <div className="card-description">
+                                <p>{facility.description}</p>
+                            </div>
                         </div>
                     </div>
+
 
                     <Swiper
                         modules={[Autoplay]}

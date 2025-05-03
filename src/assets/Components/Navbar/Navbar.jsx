@@ -58,11 +58,11 @@ const Navbar = () => {
                     <li><Link to="/room">Rooms</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/facilities">Facilities</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/booking">Book Now</Link></li>
                 </ul>
 
                 <div className="nav-btns">
-                    <button className="nav-button">Book Now</button>
+
                     <i className="ri-menu-4-line" id="bar-icon" onClick={menubtn}></i>
                 </div>
             </div>

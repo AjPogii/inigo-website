@@ -97,6 +97,7 @@
   color: #666;
   margin-bottom: 1rem;
   line-height: 1.5;
+
 }
 
 .room-footer {
@@ -129,6 +130,7 @@
 .book-now-button {
   background-color: #94511d;
   color: white;
+  width: 120%;
 
 }
 

@@ -6,8 +6,6 @@ import { Autoplay } from 'swiper/modules'
 import RoomDataDetails from './RoomDataDetails'
 
 
-
-
 const RoomDetailsPage = ({ isOpen, onClose, roomname }) => {
 
     if (!isOpen) return null;
@@ -40,7 +38,7 @@ const RoomDetailsPage = ({ isOpen, onClose, roomname }) => {
                     <div className="room-details-content">
                         <div className="image-slider-container">
                             <Swiper
-                                modules={Autoplay}
+                                modules={[Autoplay]}
                                 spaceBetween={0}
                                 slidesPerView={1}
                                 autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -48,7 +46,7 @@ const RoomDetailsPage = ({ isOpen, onClose, roomname }) => {
                                 className="room-swiper"
                             >
                                 {currentRoom.images.map((image, index) => (
-                                    <SwiperSlide>
+                                    <SwiperSlide key={index}>
                                         <img src={image} alt={`${currentRoom.title} view ${index + 1}`} />
                                     </SwiperSlide>
                                 ))}

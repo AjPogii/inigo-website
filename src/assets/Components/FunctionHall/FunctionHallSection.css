@@ -53,10 +53,9 @@
     justify-content: center;
 }
 
-.description {
+.function-hall-content small {
     font-size: 16px;
     line-height: 1.6;
-    color: #666;
     margin-bottom: 25px;
 }
 

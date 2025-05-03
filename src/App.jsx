@@ -7,7 +7,7 @@ import RoomPage from "./assets/Pages/RoomPage/RoomPage";
 import RoomDetailsPage from "./assets/Pages/RoomPage/RoomDetailsPage";
 import Facilities from "./assets/Pages/FacilitiesPage/Facilities";
 import About from "./assets/Pages/AboutPage/About";
-import Contact from "./assets/Pages/ContactUsPage/Contact";
+import BookingPage from "./assets/Pages/ContactUsPage/BookingPage";
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
             <Route path="/room/:roomname" element={<RoomDetailsPage />} />
             <Route path="/facilities" element={<Facilities />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/booking" element={<BookingPage />} />
           </Routes>
         </div>
       </Router>

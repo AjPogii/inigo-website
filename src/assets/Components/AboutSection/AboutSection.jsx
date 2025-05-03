@@ -21,8 +21,7 @@ const AboutSection = () => {
                 </div>
 
                 <div className="About-content">
-                    <h1 className="section-title">About Us</h1>
-                    <h2 className="section-heading">Escape to <span>Tranquility, </span> Embraced by <span>Nature and Elegance.</span> </h2>
+                    <h2 >Escape to <span>Tranquility, </span> Embraced by <span>Nature and Elegance.</span> </h2>
 
                     <div className="About-content-text">
                         <small>Hotel Inigo strive to create a pleasant and welcoming atmosphere.

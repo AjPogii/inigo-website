@@ -49,7 +49,7 @@ const Footer = () => {
                         <li>
                             <span> <i className="ri-mail-line"></i></span>
                             <p><a href="mailto:sales.inigo2019@gmail.com">sales.inigo2019@gmail.com</a><br />
-                                <a href="mailto:reservations@luxuryhotel.com">reservations@luxuryhotel.com</a>
+
                             </p>
 
                         </li>
