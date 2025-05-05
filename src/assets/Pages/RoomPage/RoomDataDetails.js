@@ -1,8 +1,4 @@
 
-// import RoomImg2 from "../../images/room-img2.png";
-// import RoomImg3 from "../../images/room-img3.png";
-
-
 const RoomDetails = [
     {
         id: 1,

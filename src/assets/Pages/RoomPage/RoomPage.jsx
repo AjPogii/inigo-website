@@ -52,7 +52,7 @@ const RoomPage = () => {
     return <div className="loading">Loading...</div>;
   } else if (error) {
     return <div className="error">Error: {error}</div>;
-  }
+  };
 
   return (
     <div className="room-page">

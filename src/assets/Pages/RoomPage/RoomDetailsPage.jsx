@@ -31,9 +31,6 @@ const RoomDetailsPage = ({ isOpen, onClose, roomname }) => {
         }}>
 
             <div className="modal-content">
-
-
-
                 <div className='room-details-page'>
                     <div className="room-details-content">
                         <div className="image-slider-container">
@@ -110,8 +107,6 @@ const RoomDetailsPage = ({ isOpen, onClose, roomname }) => {
                 </div>
             </div>
         </div>
-
-
     )
 }
 

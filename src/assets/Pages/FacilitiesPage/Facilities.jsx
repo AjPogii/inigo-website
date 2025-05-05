@@ -1,55 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Facilities.css'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-
-
 const Facilities = () => {
 
+    const [facilities, setFacilities] = useState([]);
+    const [Isloading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    const facilities = [
-        {
-            id: 1,
-            name: "Single Room",
-            description: "Indulge in comfort and tranquility in our cozy Single Room, designed to provide the perfect retreat for solo travelers. This inviting space features a plush single bed, ensuring a restful night's sleep. The room is equipped with modern amenities, including a flat-screen TV, complimentary Wi-Fi, and a stylishly appointed bathroom with a refreshing shower.",
-            type: "collage",
-            images: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
-            position: "left"
-        },
+    useEffect(() => {
+        fetchFacilitiesData();
+    }, []);
 
-        {
-            id: 2,
-            name: "Double Room",
-            description: "Experience comfort and elegance in our Double Room, designed to accommodate two guests with style and sophistication. This spacious room features a luxurious queen or king-size bed, perfect for couples or friends traveling together. The room is equipped with modern amenities, including a flat-screen TV, complimentary Wi-Fi, and an en-suite bathroom with a refreshing shower or bath.",
-            type: "collage",
-            images: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
-            position: "right"
-        },
-        {
-            id: 3,
-            name: "Function Hall",
-            description: "Whether you're planning a grand celebration, a corporate event, or an intimate gathering, these function halls offer a range of features and capacities to suit your needs. From luxurious ballrooms to versatile meeting spaces, here are some outstanding options for hosting your next event.",
-            type: "collage",
-            images: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
-            position: "left"
-        },
+    const fetchFacilitiesData = async () => {
+        try {
+            setIsLoading(true);
+            const response = await fetch("http://localhost:3001/api/facilities");
+            if (!response.ok) {
+                throw new Error('Failed to fetch facilities data');
 
-        {
-            id: 4,
-            name: "Cafe",
-            description: "Indulge in a delightful dining experience at our cozy café, where you can enjoy a variety of international and local flavors in a warm and inviting atmosphere. Our café is designed to provide a comfortable space for guests to relax and socialize while savoring a selection of teas, coffees, and delicious pastries.",
-            type: "slider",
-            slides: ['api/placeholder/400/180', 'api/placeholder/400/180', 'api/placeholder/400/180'],
-            position: "center"
-        },
+            }
+            const data = await response.json();
+            setFacilities(data);
+            setIsLoading(false);
+        } catch (error) {
+            setError(error.message);
+            setIsLoading(false);
+            console.error("Error fetching facilities data:", error);
+        }
+    };
 
-    ];
+    if (Isloading) {
+        return <div className="loading">Loading...</div>
+    } else if (error) {
+        return <div className="error">Error: {error}</div>
+
+    }
+
 
     const FacilityCard = (facility) => {
         return (
@@ -59,12 +52,12 @@ const Facilities = () => {
                     {facility.position !== 'right' && (
                         <div className="image-collage">
                             <div className="large-image-container">
-                                <img src={facility.images[0]} alt={`${facility.name} Main View`} />
+                                <img src={`/images/${facility.images[0]}`} alt={`${facility.name} Main View`} />
                             </div>
                             <div className="content-side">
                                 <div className="small-images">
-                                    <img src={facility.images[1]} alt={`${facility.name} Detail 1`} />
-                                    <img src={facility.images[2]} alt={`${facility.name} Detail 2`} />
+                                    <img src={`/images/${facility.images[1]}`} alt={`${facility.name} Detail 1`} />
+                                    <img src={`/images/${facility.images[2]}`} alt={`${facility.name} Detail 2`} />
                                 </div>
                             </div>
                         </div>
@@ -82,12 +75,12 @@ const Facilities = () => {
                     {facility.position === 'right' && (
                         <div className="image-collage">
                             <div className="large-image-container">
-                                <img src={facility.images[0]} alt={`${facility.name} Main View`} />
+                                <img src={`/images/${facility.images[0]}`} alt={`${facility.name} Main View`} />
                             </div>
                             <div className="content-side">
                                 <div className="small-images">
-                                    <img src={facility.images[1]} alt={`${facility.name} Detail 1`} />
-                                    <img src={facility.images[2]} alt={`${facility.name} Detail 2`} />
+                                    <img src={`/images/${facility.images[1]}`} alt={`${facility.name} Detail 1`} />
+                                    <img src={`/images/${facility.images[2]}`} alt={`${facility.name} Detail 2`} />
                                 </div>
                             </div>
                         </div>
@@ -124,7 +117,7 @@ const Facilities = () => {
                         {facility.slides && facility.slides.map((slide, index) => (
                             <SwiperSlide key={index}>
                                 <div className="slider-image-container">
-                                    <img src={slide} alt={`${facility.name} Slide ${index + 1}`} />
+                                    <img src={`/images/${slide}`} alt={`${facility.name} Slide ${index + 1}`} />
                                 </div>
                             </SwiperSlide>
                         ))}

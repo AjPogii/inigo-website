@@ -7,7 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'http://localhost:3001',
-      'images': 'http://localhost:3001',
+      '/images': 'http://localhost:3001',
+      '/roomPage': 'http://localhost:3001',
+      '/facilitiesPage': 'http://localhost:3001'
     }
   }
 });
